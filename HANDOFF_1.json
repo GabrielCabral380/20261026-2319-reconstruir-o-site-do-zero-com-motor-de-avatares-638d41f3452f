@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "project": "1895a2be12d4",
+  "index": 0,
+  "agent": "Maya",
+  "request": "Reconstruir o site do zero com motor de avatares interativos em JavaScript. Xavier já criou o HTML e CSS.",
+  "title": "Avatares vetoriais e adaptador de animação",
+  "description": "Criar os personagens locais Aurora e Cosmo, o catálogo AVATARS e createSvgRenderer conforme os contratos do PLANO.md. Implementar load, play e destroy, animações idle/wave/celebrate, fallback estático, redução de movimento, cancelamento e prevenção de montagem tardia. Trabalhar apenas nos arquivos desta parte e testar com doubles sem depender do motor ou da página de Xavier.",
+  "files": [
+    "js/avatars/catalog.js",
+    "js/avatars/svg-renderer.js",
+    "assets/avatars/aurora.svg",
+    "assets/avatars/cosmo.svg",
+    "tests/avatar-renderer.test.mjs"
+  ],
+  "acceptance": [
+    "Catálogo exporta aurora e cosmo com URLs locais válidas e as três ações acordadas; SVGs não contêm scripts ou recursos remotos.",
+    "Renderer monta no máximo um avatar, executa ações finitas e apresenta fallback estático com movimento reduzido ou sem Web Animations API.",
+    "Teste individual via Node passa e cobre carga malsucedida, cancelamento, destroy idempotente e ausência de montagem após destruição."
+  ],
+  "environment": {
+    "os": "Windows",
+    "shell": "PowerShell",
+    "cwd": "C:\\Users\\Usuario\\Desktop\\PROJETOS_EQUIPE\\20261026-2319-reconstruir-o-site-do-zero-com-motor-de-avatares-638d41f3452f",
+    "tools": {
+      "python": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+      "git": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "node": "C:\\Program Files\\nodejs\\node.EXE",
+      "npm": "C:\\Program Files\\nodejs\\npm.CMD",
+      "rg": null,
+      "powershell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.EXE",
+      "bash": "C:\\Windows\\system32\\bash.EXE"
+    },
+    "rules": [
+      "Verificar dependencias e permissoes antes de executar.",
+      "Nao presumir Linux/WSL nem ferramentas ausentes.",
+      "Nao declarar sucesso sem artefatos e evidencias verificaveis."
+    ]
+  }
+}

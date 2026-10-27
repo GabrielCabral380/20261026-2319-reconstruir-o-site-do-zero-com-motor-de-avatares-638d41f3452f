@@ -1,0 +1,149 @@
+{
+  "pedido": "Reconstruir o site do zero com motor de avatares interativos em JavaScript. Xavier já criou o HTML e CSS.",
+  "projeto": "1895a2be12d4",
+  "inicio": "2026-10-26 23:19:40",
+  "partes": [
+    {
+      "titulo": "Avatares vetoriais e adaptador de animação",
+      "quem": "Maya",
+      "situacao": "em andamento"
+    },
+    {
+      "titulo": "Estrutura da página e motor de estados e eventos",
+      "quem": "Xavier",
+      "situacao": "em andamento"
+    },
+    {
+      "titulo": "Integração JavaScript, controles e validação completa",
+      "quem": "Gabriel",
+      "situacao": "em andamento"
+    }
+  ],
+  "pasta": "C:\\Users\\Usuario\\Desktop\\PROJETOS_EQUIPE\\20261026-2319-reconstruir-o-site-do-zero-com-motor-de-avatares-638d41f3452f",
+  "combinacao": {
+    "Gabriel": "Eu assumo a programação JavaScript para integrar os avatares na página sem problemas, garantindo a interatividade. É o meu forte e eu faço isso rapidinho.",
+    "Xavier": "Maya, como você está coordenando, eu posso focar na parte de configurar a estrutura e a lógica de eventos no JavaScript pra receber os modelos 3D ou as animações que você preparar. Assim a gente garante que o motor funcione direitinho no site!"
+  },
+  "handoffs": [
+    {
+      "version": 1,
+      "project": "1895a2be12d4",
+      "index": 0,
+      "agent": "Maya",
+      "request": "Reconstruir o site do zero com motor de avatares interativos em JavaScript. Xavier já criou o HTML e CSS.",
+      "title": "Avatares vetoriais e adaptador de animação",
+      "description": "Criar os personagens locais Aurora e Cosmo, o catálogo AVATARS e createSvgRenderer conforme os contratos do PLANO.md. Implementar load, play e destroy, animações idle/wave/celebrate, fallback estático, redução de movimento, cancelamento e prevenção de montagem tardia. Trabalhar apenas nos arquivos desta parte e testar com doubles sem depender do motor ou da página de Xavier.",
+      "files": [
+        "js/avatars/catalog.js",
+        "js/avatars/svg-renderer.js",
+        "assets/avatars/aurora.svg",
+        "assets/avatars/cosmo.svg",
+        "tests/avatar-renderer.test.mjs"
+      ],
+      "acceptance": [
+        "Catálogo exporta aurora e cosmo com URLs locais válidas e as três ações acordadas; SVGs não contêm scripts ou recursos remotos.",
+        "Renderer monta no máximo um avatar, executa ações finitas e apresenta fallback estático com movimento reduzido ou sem Web Animations API.",
+        "Teste individual via Node passa e cobre carga malsucedida, cancelamento, destroy idempotente e ausência de montagem após destruição."
+      ],
+      "environment": {
+        "os": "Windows",
+        "shell": "PowerShell",
+        "cwd": "C:\\Users\\Usuario\\Desktop\\PROJETOS_EQUIPE\\20261026-2319-reconstruir-o-site-do-zero-com-motor-de-avatares-638d41f3452f",
+        "tools": {
+          "python": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+          "git": "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "node": "C:\\Program Files\\nodejs\\node.EXE",
+          "npm": "C:\\Program Files\\nodejs\\npm.CMD",
+          "rg": null,
+          "powershell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.EXE",
+          "bash": "C:\\Windows\\system32\\bash.EXE"
+        },
+        "rules": [
+          "Verificar dependencias e permissoes antes de executar.",
+          "Nao presumir Linux/WSL nem ferramentas ausentes.",
+          "Nao declarar sucesso sem artefatos e evidencias verificaveis."
+        ]
+      }
+    },
+    {
+      "version": 1,
+      "project": "1895a2be12d4",
+      "index": 1,
+      "agent": "Xavier",
+      "request": "Reconstruir o site do zero com motor de avatares interativos em JavaScript. Xavier já criou o HTML e CSS.",
+      "title": "Estrutura da página e motor de estados e eventos",
+      "description": "Recuperar e adaptar o HTML/CSS já criado, se disponível, ou recriar a página porque a pasta inspecionada está vazia. Fornecer todos os seletores DOM e o carregamento de app.js definidos no PLANO.md. Implementar createAvatarEngine com renderer injetado, estado, assinatura, seleção, ações, redução de movimento, erros, exclusão de operações concorrentes e destruição. Não implementar a vinculação dos controles nem o renderer. Testar o núcleo com renderer falso para permitir desenvolvimento paralelo.",
+      "files": [
+        "index.html",
+        "css/styles.css",
+        "js/core/avatar-engine.js",
+        "tests/avatar-engine.test.mjs"
+      ],
+      "acceptance": [
+        "HTML fornece todos os IDs, labels, controles inicialmente desabilitados, status acessível, noscript e importação única de js/app.js definidos no plano.",
+        "Página tem foco visível e não apresenta rolagem horizontal a 320 px ou em desktop.",
+        "Teste individual via Node passa e cobre transições, notificações de estado, entradas inválidas, BUSY, recuperação de erro e descarte de resultados após destroy."
+      ],
+      "environment": {
+        "os": "Windows",
+        "shell": "PowerShell",
+        "cwd": "C:\\Users\\Usuario\\Desktop\\PROJETOS_EQUIPE\\20261026-2319-reconstruir-o-site-do-zero-com-motor-de-avatares-638d41f3452f",
+        "tools": {
+          "python": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+          "git": "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "node": "C:\\Program Files\\nodejs\\node.EXE",
+          "npm": "C:\\Program Files\\nodejs\\npm.CMD",
+          "rg": null,
+          "powershell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.EXE",
+          "bash": "C:\\Windows\\system32\\bash.EXE"
+        },
+        "rules": [
+          "Verificar dependencias e permissoes antes de executar.",
+          "Nao presumir Linux/WSL nem ferramentas ausentes.",
+          "Nao declarar sucesso sem artefatos e evidencias verificaveis."
+        ]
+      }
+    },
+    {
+      "version": 1,
+      "project": "1895a2be12d4",
+      "index": 2,
+      "agent": "Gabriel",
+      "request": "Reconstruir o site do zero com motor de avatares interativos em JavaScript. Xavier já criou o HTML e CSS.",
+      "title": "Integração JavaScript, controles e validação completa",
+      "description": "Implementar app.js como ponto único de composição do catálogo, renderer e motor; implementar bindAvatarControls nos seletores e assinaturas do PLANO.md. Preencher seleção, inicializar preferência de movimento, tratar promessas rejeitadas, sincronizar controles e mensagens com estados e limpar recursos na saída. Desenvolver testes com doubles dos contratos enquanto as demais partes trabalham. Ao integrar, executar e documentar os testes reais em TESTES.md; encaminhar correções de arquivos alheios aos respectivos donos.",
+      "files": [
+        "js/app.js",
+        "js/ui/avatar-controls.js",
+        "tests/avatar-controls.test.mjs",
+        "TESTES.md"
+      ],
+      "acceptance": [
+        "Página servida por HTTP carrega o primeiro avatar e permite selecionar os dois personagens e executar saudação e celebração sem erros de console no fluxo normal.",
+        "Teste individual via Node passa e verifica listeners, limpeza idempotente, bloqueio de controles durante operações, mensagens de erro e tratamento de rejeições.",
+        "Preferência inicial de movimento e checkbox funcionam; controles nativos são utilizáveis por teclado e a seleção permite recuperação após erro de carga.",
+        "TESTES.md registra comandos e resultados executados, navegador, checagens responsivas, movimento reduzido, falha simulada e resultado da suíte completa, sem declarar verificações não realizadas."
+      ],
+      "environment": {
+        "os": "Windows",
+        "shell": "PowerShell",
+        "cwd": "C:\\Users\\Usuario\\Desktop\\PROJETOS_EQUIPE\\20261026-2319-reconstruir-o-site-do-zero-com-motor-de-avatares-638d41f3452f",
+        "tools": {
+          "python": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+          "git": "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "node": "C:\\Program Files\\nodejs\\node.EXE",
+          "npm": "C:\\Program Files\\nodejs\\npm.CMD",
+          "rg": null,
+          "powershell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.EXE",
+          "bash": "C:\\Windows\\system32\\bash.EXE"
+        },
+        "rules": [
+          "Verificar dependencias e permissoes antes de executar.",
+          "Nao presumir Linux/WSL nem ferramentas ausentes.",
+          "Nao declarar sucesso sem artefatos e evidencias verificaveis."
+        ]
+      }
+    }
+  ],
+  "plano": "O plano está pronto em PLANO.md e PARTES.json, com três partes paralelas, arquivos exclusivos e critérios de aceite validados, sem implementação."
+}

@@ -1,0 +1,38 @@
+{
+  "partes": [
+    {
+      "quem": "Maya",
+      "titulo": "Avatares vetoriais e adaptador de animação",
+      "descricao": "Criar os personagens locais Aurora e Cosmo, o catálogo AVATARS e createSvgRenderer conforme os contratos do PLANO.md. Implementar load, play e destroy, animações idle/wave/celebrate, fallback estático, redução de movimento, cancelamento e prevenção de montagem tardia. Trabalhar apenas nos arquivos desta parte e testar com doubles sem depender do motor ou da página de Xavier.",
+      "arquivos": ["js/avatars/catalog.js", "js/avatars/svg-renderer.js", "assets/avatars/aurora.svg", "assets/avatars/cosmo.svg", "tests/avatar-renderer.test.mjs"],
+      "aceite": [
+        "Catálogo exporta aurora e cosmo com URLs locais válidas e as três ações acordadas; SVGs não contêm scripts ou recursos remotos.",
+        "Renderer monta no máximo um avatar, executa ações finitas e apresenta fallback estático com movimento reduzido ou sem Web Animations API.",
+        "Teste individual via Node passa e cobre carga malsucedida, cancelamento, destroy idempotente e ausência de montagem após destruição."
+      ]
+    },
+    {
+      "quem": "Xavier",
+      "titulo": "Estrutura da página e motor de estados e eventos",
+      "descricao": "Recuperar e adaptar o HTML/CSS já criado, se disponível, ou recriar a página porque a pasta inspecionada está vazia. Fornecer todos os seletores DOM e o carregamento de app.js definidos no PLANO.md. Implementar createAvatarEngine com renderer injetado, estado, assinatura, seleção, ações, redução de movimento, erros, exclusão de operações concorrentes e destruição. Não implementar a vinculação dos controles nem o renderer. Testar o núcleo com renderer falso para permitir desenvolvimento paralelo.",
+      "arquivos": ["index.html", "css/styles.css", "js/core/avatar-engine.js", "tests/avatar-engine.test.mjs"],
+      "aceite": [
+        "HTML fornece todos os IDs, labels, controles inicialmente desabilitados, status acessível, noscript e importação única de js/app.js definidos no plano.",
+        "Página tem foco visível e não apresenta rolagem horizontal a 320 px ou em desktop.",
+        "Teste individual via Node passa e cobre transições, notificações de estado, entradas inválidas, BUSY, recuperação de erro e descarte de resultados após destroy."
+      ]
+    },
+    {
+      "quem": "Gabriel",
+      "titulo": "Integração JavaScript, controles e validação completa",
+      "descricao": "Implementar app.js como ponto único de composição do catálogo, renderer e motor; implementar bindAvatarControls nos seletores e assinaturas do PLANO.md. Preencher seleção, inicializar preferência de movimento, tratar promessas rejeitadas, sincronizar controles e mensagens com estados e limpar recursos na saída. Desenvolver testes com doubles dos contratos enquanto as demais partes trabalham. Ao integrar, executar e documentar os testes reais em TESTES.md; encaminhar correções de arquivos alheios aos respectivos donos.",
+      "arquivos": ["js/app.js", "js/ui/avatar-controls.js", "tests/avatar-controls.test.mjs", "TESTES.md"],
+      "aceite": [
+        "Página servida por HTTP carrega o primeiro avatar e permite selecionar os dois personagens e executar saudação e celebração sem erros de console no fluxo normal.",
+        "Teste individual via Node passa e verifica listeners, limpeza idempotente, bloqueio de controles durante operações, mensagens de erro e tratamento de rejeições.",
+        "Preferência inicial de movimento e checkbox funcionam; controles nativos são utilizáveis por teclado e a seleção permite recuperação após erro de carga.",
+        "TESTES.md registra comandos e resultados executados, navegador, checagens responsivas, movimento reduzido, falha simulada e resultado da suíte completa, sem declarar verificações não realizadas."
+      ]
+    }
+  ]
+}

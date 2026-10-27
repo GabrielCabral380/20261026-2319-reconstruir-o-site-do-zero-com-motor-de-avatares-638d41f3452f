@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "project": "1895a2be12d4",
+  "index": 2,
+  "agent": "Gabriel",
+  "request": "Reconstruir o site do zero com motor de avatares interativos em JavaScript. Xavier já criou o HTML e CSS.",
+  "title": "Integração JavaScript, controles e validação completa",
+  "description": "Implementar app.js como ponto único de composição do catálogo, renderer e motor; implementar bindAvatarControls nos seletores e assinaturas do PLANO.md. Preencher seleção, inicializar preferência de movimento, tratar promessas rejeitadas, sincronizar controles e mensagens com estados e limpar recursos na saída. Desenvolver testes com doubles dos contratos enquanto as demais partes trabalham. Ao integrar, executar e documentar os testes reais em TESTES.md; encaminhar correções de arquivos alheios aos respectivos donos.",
+  "files": [
+    "js/app.js",
+    "js/ui/avatar-controls.js",
+    "tests/avatar-controls.test.mjs",
+    "TESTES.md"
+  ],
+  "acceptance": [
+    "Página servida por HTTP carrega o primeiro avatar e permite selecionar os dois personagens e executar saudação e celebração sem erros de console no fluxo normal.",
+    "Teste individual via Node passa e verifica listeners, limpeza idempotente, bloqueio de controles durante operações, mensagens de erro e tratamento de rejeições.",
+    "Preferência inicial de movimento e checkbox funcionam; controles nativos são utilizáveis por teclado e a seleção permite recuperação após erro de carga.",
+    "TESTES.md registra comandos e resultados executados, navegador, checagens responsivas, movimento reduzido, falha simulada e resultado da suíte completa, sem declarar verificações não realizadas."
+  ],
+  "environment": {
+    "os": "Windows",
+    "shell": "PowerShell",
+    "cwd": "C:\\Users\\Usuario\\Desktop\\PROJETOS_EQUIPE\\20261026-2319-reconstruir-o-site-do-zero-com-motor-de-avatares-638d41f3452f",
+    "tools": {
+      "python": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+      "git": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "node": "C:\\Program Files\\nodejs\\node.EXE",
+      "npm": "C:\\Program Files\\nodejs\\npm.CMD",
+      "rg": null,
+      "powershell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.EXE",
+      "bash": "C:\\Windows\\system32\\bash.EXE"
+    },
+    "rules": [
+      "Verificar dependencias e permissoes antes de executar.",
+      "Nao presumir Linux/WSL nem ferramentas ausentes.",
+      "Nao declarar sucesso sem artefatos e evidencias verificaveis."
+    ]
+  }
+}

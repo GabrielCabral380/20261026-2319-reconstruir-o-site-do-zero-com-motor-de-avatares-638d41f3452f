@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "project": "1895a2be12d4",
+  "index": 1,
+  "agent": "Xavier",
+  "request": "Reconstruir o site do zero com motor de avatares interativos em JavaScript. Xavier já criou o HTML e CSS.",
+  "title": "Estrutura da página e motor de estados e eventos",
+  "description": "Recuperar e adaptar o HTML/CSS já criado, se disponível, ou recriar a página porque a pasta inspecionada está vazia. Fornecer todos os seletores DOM e o carregamento de app.js definidos no PLANO.md. Implementar createAvatarEngine com renderer injetado, estado, assinatura, seleção, ações, redução de movimento, erros, exclusão de operações concorrentes e destruição. Não implementar a vinculação dos controles nem o renderer. Testar o núcleo com renderer falso para permitir desenvolvimento paralelo.",
+  "files": [
+    "index.html",
+    "css/styles.css",
+    "js/core/avatar-engine.js",
+    "tests/avatar-engine.test.mjs"
+  ],
+  "acceptance": [
+    "HTML fornece todos os IDs, labels, controles inicialmente desabilitados, status acessível, noscript e importação única de js/app.js definidos no plano.",
+    "Página tem foco visível e não apresenta rolagem horizontal a 320 px ou em desktop.",
+    "Teste individual via Node passa e cobre transições, notificações de estado, entradas inválidas, BUSY, recuperação de erro e descarte de resultados após destroy."
+  ],
+  "environment": {
+    "os": "Windows",
+    "shell": "PowerShell",
+    "cwd": "C:\\Users\\Usuario\\Desktop\\PROJETOS_EQUIPE\\20261026-2319-reconstruir-o-site-do-zero-com-motor-de-avatares-638d41f3452f",
+    "tools": {
+      "python": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+      "git": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "node": "C:\\Program Files\\nodejs\\node.EXE",
+      "npm": "C:\\Program Files\\nodejs\\npm.CMD",
+      "rg": null,
+      "powershell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.EXE",
+      "bash": "C:\\Windows\\system32\\bash.EXE"
+    },
+    "rules": [
+      "Verificar dependencias e permissoes antes de executar.",
+      "Nao presumir Linux/WSL nem ferramentas ausentes.",
+      "Nao declarar sucesso sem artefatos e evidencias verificaveis."
+    ]
+  }
+}
